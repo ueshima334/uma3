@@ -1,0 +1,19 @@
+<%= render "shared/header" %>
+
+<div class="survey--select-main">
+
+  <div class="survey-select">
+
+    <div class="survey-title">
+      菊花賞勝つのは？
+    </div>
+
+    <div class="survey-form">
+      <% form_with model:@vote,local: true do |f| %>
+        <% f.hidden_field :select,value: 1 %>
+        <% f.submit "投票する" ,class:"select-btn" %>
+    </div>
+
+  </div>
+
+</div>
