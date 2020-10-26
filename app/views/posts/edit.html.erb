@@ -1,0 +1,60 @@
+<%= render 'shared/header'%>
+
+<div class="post-new-contents">
+  <div class="post-new-main">
+    <h2 class="post-new-title">写真の情報を入力</h2>
+    <%= form_with model: @post , method: :patch,local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        写真
+        <span class="indispensable">必須</span>
+      </div>
+
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        
+        <%= f.file_field :images, multiple: true, id:"photo-image" %>
+        <%# <%= f.hidden_field :image,value: @post.images %>
+      </div>
+
+      <div id="images-preview">
+        <% if @post.images.attached? %>
+        <% @post.images.each do |image|%>
+        <div class='item-image' >
+          <div class=' item-image__content'>
+            <div class='item-image__content--icon'>
+              <%= image_tag image%>
+            </div>
+          </div>
+          <div class='item-image__operation'>
+            <div class='item-image__operation--delete'>削除
+            </div>
+          </div>
+        </div>
+        <% end %>
+        <% end%>
+      </div>
+    </div>
+
+    <div class="post-new-photo">
+      <div class="photo-explain">
+        <div class="weight-bold-text">
+          テキスト
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :text, class:"photo-text", id:"photo-info", placeholder:"この画像について説明を書きましょう！" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+
+    <div class="post-btn-contents">
+      <%= f.submit "更新する" ,class:"post-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+     <% end %>
+  </div>
+</div>

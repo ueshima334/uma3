@@ -1,0 +1,117 @@
+.room-header{
+  background-color: lightgreen;
+}
+
+.room-contents-all{
+  background-color: lightgreen;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+}
+
+.main-title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  position: relative;
+  color: #00a02e;
+  font-size: 30px;
+  padding: 1rem 0;
+	font-weight: 700;
+  letter-spacing: 3px;
+  color:black;
+  text-decoration: none;
+  }
+  
+.main-title:after {
+  display: block;
+  content: "";
+  height: 5px;
+  background: -moz-linear-gradient(to right, rgb(10, 350, 20), transparent);
+  background: -webkit-linear-gradient(to right, rgb(10, 350, 20), transparent);
+  background: linear-gradient(to right, rgb(10, 350, 20), transparent);
+  }
+.room-contents{
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 600px);
+  background-color: white;
+  padding: 0 10px;
+}
+
+
+
+.room{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.rooms{
+  margin-top: 30px;
+}
+/* 掲示板名----------------------- */
+.post-title{
+  text-align: center;
+  position: relative;
+  padding: 10px 0;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.thread{
+  text-align: center;
+  font-size: 25px;
+  margin: 10px 0;
+}
+
+.post-title::before,
+.post-title::after {
+  position: absolute;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 6px;
+  box-sizing: border-box;
+}
+
+.post-title::before {
+  top: 0;
+  border-top: 2px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.post-title::after {
+  bottom: 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 2px solid #ccc;
+}
+
+/* 新規スレッド作成ボタン------------------- */
+.new-rooms{
+  display: inline-block;
+  padding: 16px 32px;
+  background:skyblue;
+  border-bottom: solid 4px skyblue;
+  border-radius: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  line-heigt: 1.2em;
+  -webkit-transition: .100s;
+  transition: .100s;
+}
+
+/* スレッドタイトル---------------- */
+.room-title {
+  padding-bottom: .5em;
+  border-bottom: 1px solid #ccc;
+}
+.room-title:first-letter {
+  margin-right: .1em;
+  font-size: 1.5em;
+}
+
+a{
+  text-decoration: none;
+}

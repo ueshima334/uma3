@@ -1,0 +1,60 @@
+<%= render 'shared/header'%>
+
+<div class="uma-main">
+
+  <div class="uma-top-top">
+
+
+
+  <div class="uma-top">
+
+      <div class="uma-title">
+        umastagram
+      </div>
+
+      <div class="uma-search">
+        <%= form_with(url:search_posts_path,local: true,method: :get,class:"search-btn") do |f| %>
+          <%= f.text_field :keyword,placeholder:"キーワードを入力" %>
+          <%= f.submit "🔍" %>
+          <% end %>
+      </div>
+
+  </div>
+
+  <div class="new-post">
+      <%= link_to image_tag("newphoto.jpg", class: "new-photo"),new_post_path %>
+    </div>
+  </div>
+  
+   
+    <div class="uma-content-main">
+        <% @posts.each do |post|%>
+         <div class="uma-content-top"><span></span>
+             <%= link_to post.user.nickname,user_path(post),class:'post-user-name'%>
+         </div>
+         <% post.images.each do |image|%>
+         <div class="content-image-boc">
+              <%= image_tag image ,class: "content-image" %>
+              <% break %>
+         </div>
+         <% end %>
+
+
+      <% num = 0%><% comments = post.comments%><% comments.order('created_at DESC').each do |comment|%><% num += 1 %>
+      <div class="ume-comment">
+        <b><%= link_to comment.user.nickname,user_path(comment.user),class:'comment-user-name' %></b>
+        <div class="content-text"><%= comment.text %></div>
+         <% if num ==2 %><% break%><% end %>
+        
+       </div>
+       <% end %>
+      <div class="ume-comment-details">
+        <%= link_to '詳細は画像をクリック',post_path(post) %>
+       </div>
+
+    </div>
+    <% end %>
+
+</div>
+
+

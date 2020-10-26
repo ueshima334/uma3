@@ -1,0 +1,45 @@
+<%= render "shared/header" %>
+
+<div class="item-show">
+<%= link_to '戻る',posts_path,class:'back-show-btn' %>
+  <div class="item-box">
+
+<% @post.images.each do |image|%>
+    <div class='item-img-content'>
+      <%= image_tag image ,class:"item-box-img" %>
+    </div>
+    <% break %><% end %>
+
+ <div class="edit-box">
+    <% if @post.user.id == current_user.id %>
+    <%= link_to '編集', edit_post_path(@post), method: :get, class: "edit-btn" %>
+    <%= link_to '削除', post_path(@post), method: :delete,data: { confirm: '削除しますか？' }, class:'destroy-btn' %>
+    <% end  %>
+  </div>
+
+    <div class="item-explain-box">
+     <b><%= link_to @post.user.nickname,user_path(@post.user) %></b><br>
+      <span><%= @post.text %></span>
+    </div>
+       <div id="favorite">
+      <%= render partial: "likes/like", locals: { post:@post } %>
+    </div>
+  </div>
+
+  <div class="comment-all"><h1>＜コメント一覧＞</h1>
+    <% @comments.each do |comment|%>
+    <div class="comment-one" >
+      <b><%= link_to comment.user.nickname,user_path(comment.user),class:'comment-user-name' %></b>
+      <%= comment.text %>
+      </div>
+      <% end %>
+  </div>
+
+  <div class="comment-box">
+    <%= form_with model:[@post,@comment],local: true do |f| %>
+      <%= f.text_area :text,class:"comment-text"%>
+      <div class="comment-box">
+      <%= f.submit 'コメントする', class:"comment-btn" %>
+      </div>
+    <% end %>
+  </div>

@@ -1,0 +1,8 @@
+<div class="favorite-btn" >
+      <% if Like.exists?(user_id:current_user.id,post_id:post.id)%>
+        <%= link_to image_tag("heart_ari.png",width:"20",height:"20") ,post_likes_path(post.id),method: :delete,remote: true,class:"fav-btn",id:'favorite-star-icon2' %>
+       <% else %>
+        <%= link_to image_tag("heart_kara.png",width:"20",height:"20"),post_likes_path(post.id),method: :get ,remote: true, class:"fav-btn" ,id:'favorite-star-icon'%>
+      <%end %>
+        <span>いいね  <%= Like.where(post_id:post.id).count %></span>
+      </div>

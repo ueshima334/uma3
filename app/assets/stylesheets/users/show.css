@@ -1,0 +1,94 @@
+/* ヘッダー---------- */
+
+.main-title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  position: relative;
+  color: #00a02e;
+  font-size: 30px;
+  padding: 1rem 0;
+	font-weight: 700;
+  letter-spacing: 3px;
+  color:black;
+  text-decoration: none;
+  }
+  
+.main-title:after {
+  display: block;
+  content: "";
+  height: 5px;
+  background: -moz-linear-gradient(to right, rgb(10, 350, 20), transparent);
+  background: -webkit-linear-gradient(to right, rgb(10, 350, 20), transparent);
+  background: linear-gradient(to right, rgb(10, 350, 20), transparent);
+  }
+/* タイトル部分----------- */
+  .uma-contents-top{
+    padding: 0 30px 0;
+    border: 3px solid #ccc;
+    border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
+    margin: 20px auto 20px;
+    width: 700px;
+  }
+
+.uma-title{
+  text-align: center;
+}
+
+
+/* 全体に関する部分----------- */
+.main{
+  width: 800px;
+  margin: 50px auto 10px; 
+}
+
+/* ユーザープロフィールに関する部分-------- */
+
+.user-main{
+  display: flex;
+  padding: 0 20px;
+}
+
+.prf-img {
+  border-radius: 50%;
+  width:  180px;
+  height: 180px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.user-profile-top{
+  display: flex;
+}
+
+.user-name{
+  margin-right: 30px;
+}
+
+.user-profile{
+  margin-left: 20px;
+}
+
+.user-info{
+  margin: 10px 0 ;
+}
+
+/* 投稿一覧に関する部分------------- */
+
+.user-post-main{
+  margin-top: 20px;
+  width: 800px;
+}
+
+.posts{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.post-img{
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+}
