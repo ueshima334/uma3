@@ -4,18 +4,16 @@
   
   <div class="survey-main-title">アンケート一覧</div>
   <div class="survey-new">
-  <%= link_to "アンケート作成",new_survey_path%>
+  <%= link_to "アンケート作成",new_survey_path,class:'survey-new-btn'%>
   </div>
   
     <div class="survey-contents">
-     
-      <div class="survey-content">
-        菊花賞勝つのは？
-      </div>
+       <% @surveys.each do |survey| %>
 
       <div class="survey-content">
-        秋華賞勝つのは？
+        <%= link_to survey.title,survey_path(survey),class:'survey-title' %>
       </div>
+      <% end %>
 
     </div>
   

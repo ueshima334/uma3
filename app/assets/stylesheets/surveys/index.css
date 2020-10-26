@@ -20,3 +20,13 @@ font-size: 30px;
 .survey-content{
   margin-bottom: 30px;
 }
+
+.survey-title{
+  border-bottom: 1px solid black;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.survey-new-btn{
+  border: solid 1px black;
+}
