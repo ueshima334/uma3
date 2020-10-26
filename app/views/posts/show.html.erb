@@ -4,11 +4,11 @@
 <%= link_to '戻る',posts_path,class:'back-show-btn' %>
   <div class="item-box">
 
+    <div class='a'>
 <% @post.images.each do |image|%>
-    <div class='item-img-content'>
-      <%= image_tag image ,class:"item-box-img" %>
-    </div>
-    <% break %><% end %>
+      <%= image_tag image ,class:"b" %>
+      <% end %>
+ </div>
 
  <div class="edit-box">
     <% if @post.user.id == current_user.id %>

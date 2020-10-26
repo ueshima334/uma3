@@ -179,3 +179,12 @@
   display: flex;
   margin-bottom: 10px;
 }
+
+.a{
+  width: 40vw;
+}
+
+.b{
+
+  object-fit: contain;
+}
