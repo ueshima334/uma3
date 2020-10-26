@@ -11,4 +11,5 @@ resources :posts do
     get 'search'
   end
 end
+resources :surveys,only:[:index,:new,:show]
 end
