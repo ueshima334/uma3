@@ -3,6 +3,7 @@ class CreateSurveys < ActiveRecord::Migration[6.0]
     create_table :surveys do |t|
 
       t.timestamps
+      t.string :title,null:false
       t.string :item1,null:false
       t.string :item2,null:false
       t.string :item3
