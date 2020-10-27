@@ -8,3 +8,22 @@
   text-align: center;
   
 }
+
+.survey-destroy-btn{
+  border: double 1px black;
+  text-align: center;
+  width: 10vw;
+}
+
+.survey-btn-box{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 0 30px;
+}
+
+.survey-return-btn{
+  width: 5vw;
+  border: solid 1px black;
+  text-align: center;
+}

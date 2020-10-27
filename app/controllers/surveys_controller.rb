@@ -28,7 +28,7 @@ class SurveysController < ApplicationController
   private
 
   def survey_params
-    params.require(:survey).permit(:title, :item1, :item2, :item3, :item4)
+    params.require(:survey).permit(:title, :item1, :item2, :item3, :item4).merge(user_id:current_user.id)
   end
 
   def total_vote
@@ -37,7 +37,7 @@ class SurveysController < ApplicationController
     4.times do |n|
       n += 1
       if @survey.send("item#{n}") != ''
-        eval "@vote#{n}=Vote.where(vote_id:@survey.id,select: n )"
+        eval "@vote#{n}=Vote.where(survey_id:@survey.id,select: n )"
         @total_vote << [@survey.send("item#{n}"), (eval "@vote#{n}").count]
       else
         @number = n - 1

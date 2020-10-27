@@ -11,7 +11,7 @@ resources :posts do
     get 'search'
   end
 end
-resources :surveys,only:[:index,:new,:show,:create] do
+resources :surveys,only:[:index,:new,:show,:create,:destroy] do
   resources :votes,only:[:create]
 end
 end

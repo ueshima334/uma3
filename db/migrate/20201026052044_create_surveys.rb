@@ -8,6 +8,7 @@ class CreateSurveys < ActiveRecord::Migration[6.0]
       t.string :item2,null:false
       t.string :item3
       t.string :item4
+      t.references :user,foreign_key: true
 
     end
   end

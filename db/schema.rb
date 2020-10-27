@@ -68,6 +68,8 @@ ActiveRecord::Schema.define(version: 2020_10_26_052044) do
     t.string "item2", null: false
     t.string "item3"
     t.string "item4"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_surveys_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -89,9 +91,9 @@ ActiveRecord::Schema.define(version: 2020_10_26_052044) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "select", null: false
     t.bigint "user_id"
-    t.bigint "vote_id"
+    t.bigint "survey_id"
+    t.index ["survey_id"], name: "index_votes_on_survey_id"
     t.index ["user_id"], name: "index_votes_on_user_id"
-    t.index ["vote_id"], name: "index_votes_on_vote_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -100,6 +102,7 @@ ActiveRecord::Schema.define(version: 2020_10_26_052044) do
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "surveys", "users"
+  add_foreign_key "votes", "surveys"
   add_foreign_key "votes", "users"
-  add_foreign_key "votes", "votes"
 end
