@@ -2,7 +2,7 @@
 
 <%= link_to '戻る',surveys_path,class:'return-btn'%>
 
-<% if Vote.exists?(user_id:current_user.id,vote_id:params[:survey_id])%>
+<% unless Vote.exists?(user_id:current_user.id,vote_id:params[:id])%>
 <div class="survey--select-main">
 
   <div class="survey-select">
@@ -12,7 +12,7 @@
     </div>
 
 
-   <% n = 0%><% @number.times do%><% n += 1%>
+   <% @number.times do |n|%><% n += 1%>
       <%= form_with model:[@survey,@vote],local: true do |f| %>
           <div class="survey-form">
 
@@ -26,9 +26,9 @@
         </div>
       </div>
         <% end %>
-  
+      <% end %>
+
     </div>
-    <% end %>
   </div>
 
   <% else %>
@@ -40,13 +40,13 @@
 
 <table border="1" width="500">
   <tr>
-  <% n = 0%><% @number.times do %><% n += 1 %>
+ <% @number.times do |n| %><% n += 1 %>
     <th><%= @survey.send("item#{n}") %></th>
    <%end%>
   </tr>
     <tr>
-  <% n = 0%><% @number.times do %><% n += 1 %>
-    <th><%= Vote.where(vote_id:@survey.id,select:n).count%></th>
+<% @number.times do |n| %><% n += 1 %>
+    <th><%= Vote.where(vote_id:@survey.id,select:n).count%>票</th>
     <% end %>
 
   </tr>

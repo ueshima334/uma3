@@ -4,6 +4,7 @@
   align-items: center;
 }
 
-.vote-table{
+.vote-table > tr,th{
+  text-align: center;
   
 }
