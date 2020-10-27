@@ -1,0 +1,29 @@
+<%= render "shared/header" %>
+<%= link_to '戻る',surveys_path,class:'return-btn'%>
+
+
+<div class="new-survey-main">
+
+  <div class="new-survey-top">アンケート作成</div>
+  
+  <%= form_with model:@survey,local: true do |f| %>
+    <div class="new-surver-title">
+      <%= f.label 'アンケートタイトル(30文字まで)',class:'new-survey-name'%><br>
+      <%= f.text_field :title,class: 'survey-title-form',placeholder:'必須',maxlength:'30'%>
+   </div>
+   
+   <div class="new-survey-select">
+     <%= f.label '選択肢(20文字まで)',class:'select-label'%><br>
+     ①<%= f.text_field :item1,placeholder: '必須',class:'select-box',maxlength: "20" %>
+     ②<%= f.text_field :item2,placeholder: '必須',class:'select-box',maxlength: "20" %>
+     ③<%= f.text_field :item3,class:'select-box' ,maxlength: "20" %>
+     ④<%= f.text_field :item4,class:'select-box',maxlength: "20" %>
+   </div>
+
+   <div class='new-survey-submit'>
+     <%= f.submit '作成',class:'new-survey-btn'%>
+    </div>
+
+<% end %>
+
+</div>

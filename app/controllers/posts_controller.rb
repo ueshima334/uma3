@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.includes(:user,:comments).order('created_at DESC')
+    @posts = Post.includes(:user, :comments).order('created_at DESC')
   end
 
   def new
@@ -17,10 +17,9 @@ class PostsController < ApplicationController
   end
 
   def show
-   @post = Post.find(params[:id])
-   @comment = Comment.new
-   @comments = @post.comments.includes(:user).order('created_at DESC')
-
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user).order('created_at DESC')
   end
 
   def destroy
@@ -46,10 +45,10 @@ class PostsController < ApplicationController
     @posts = Post.search(params[:keyword])
     render :index
   end
+
   private
 
   def post_params
-    params.require(:post).permit(:text,images:[]).merge(user_id:current_user.id)
+    params.require(:post).permit(:text, images: []).merge(user_id: current_user.id)
   end
-
 end

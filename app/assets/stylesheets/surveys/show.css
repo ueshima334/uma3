@@ -1,0 +1,10 @@
+.vote-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vote-table > tr,th{
+  text-align: center;
+  
+}

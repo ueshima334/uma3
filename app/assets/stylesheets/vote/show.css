@@ -1,0 +1,32 @@
+.survey-select{
+  padding: 100px 50px;
+}
+
+.return-btn{
+  border: solid 1px black;
+  width: 5vw;
+  margin: 20px 0 0 20px;
+  text-align: center;
+}
+
+.survey-show-title{
+  border-bottom: solid 1px black;
+  width: 50vw;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.survey-form{
+  display: flex;
+  margin-top: 30px;
+}
+
+.show-survey-title{
+  width: 20vw;
+  margin-right: 10px;
+}
+
+.chart{
+  width: 500px;
+  height: 500px;
+}
