@@ -61,4 +61,4 @@ gem 'devise'
 gem 'mini_magick', '~> 4.8'
 gem 'image_processing', '~> 1.2'
 gem 'jquery-rails'
-gem "chartkick"
+gem 'chartkick'

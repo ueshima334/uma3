@@ -2,6 +2,7 @@
 
 <%= link_to '戻る',surveys_path,class:'return-btn'%>
 
+<% if Vote.exists?(user_id:current_user.id,vote_id:params[:survey_id])%>
 <div class="survey--select-main">
 
   <div class="survey-select">
@@ -11,8 +12,7 @@
     </div>
 
 
-   <% n = 0 %><% 4.times do%><% n += 1%>
-  <% unless @survey.send("item#{n}") == "" %>
+   <% n = 0%><% @number.times do%><% n += 1%>
       <%= form_with model:[@survey,@vote],local: true do |f| %>
           <div class="survey-form">
 
@@ -24,16 +24,33 @@
           <%= f.hidden_field :select,:value => n %>
           <%= f.submit "投票する" ,class:"select-btn" %>
         </div>
- 　　　　　</div>
+      </div>
         <% end %>
   
+    </div>
+    <% end %>
+  </div>
 
-        
+  <% else %>
+<div class="vote-content">
+  <div class="chart">
+<%= pie_chart @total_vote %>
+</div>
+<div class="vote-table">
 
-<% else %>
-        <% break%>
-        <% end %>
+<table border="1" width="500">
+  <tr>
+  <% n = 0%><% @number.times do %><% n += 1 %>
+    <th><%= @survey.send("item#{n}") %></th>
+   <%end%>
+  </tr>
+    <tr>
+  <% n = 0%><% @number.times do %><% n += 1 %>
+    <th><%= Vote.where(vote_id:@survey.id,select:n).count%></th>
     <% end %>
 
-    </div>
-  </div>
+  </tr>
+</table> 
+</div>
+</div>
+<% end %>
