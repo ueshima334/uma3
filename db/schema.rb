@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_10_28_074549) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "name", null: false
     t.integer "horsegender_id", null: false
-    t.date "birthday", null: false
+    t.integer "age_id", null: false
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

@@ -21,15 +21,24 @@
   width: 200px;
 }
 /* 馬性選択フォーム------------ */
-.horse-gender-select{
+.horse-gender-select,.horse-age-select{
   width: 100px;
   height: 30px;
 }
 
-.input-birth-wrap{
-  display: flex;
-}
-
 .input-horse-btn{
   padding-top: 20px;
+}
+
+.send-judge{
+  width: 200px;
+  padding: 20px 20px;
+}
+
+.notice{
+  background-color: blue;
+}
+
+.alert{
+  background-color: red;
 }

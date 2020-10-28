@@ -1,12 +1,16 @@
 class Horse < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :horsegender
+  belongs_to_active_hash :age
 
-  with_options presence: { message: 'を入力してください' } do
-    validates :name
-    validates :birthday
+
+  validates :name, presence: { message: 'を入力してください' } 
+    
+
+
+  with_options numericality: { other_than: 1, message: 'を入力してください' } do
+  validates :horsegender_id
+  validates :age_id
   end
-
-  validates :horsegender, numericality: { other_than: 1, message: 'を入力してください' } 
 
 end
