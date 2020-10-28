@@ -218,9 +218,9 @@ footer h5 {
 #pagetop a:hover {
     background: #999;
 }
-/*パンくずリスト
+/* /*パンくずリスト
 -----------------------------------*/
-.breadcrumb {
+/* .breadcrumb {
     margin: 0 0 1em 0;
     padding: 0;	
 }
@@ -230,4 +230,11 @@ footer h5 {
 .breadcrumb li a {
     display: inline-block;
     color: #959fa5;
+} */ 
+
+.manage{
+  border: solid 1px black;
+  margin-right: 20px;
+  background-color: red;
+  padding: 5px;
 }
