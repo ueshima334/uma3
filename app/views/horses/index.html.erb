@@ -9,7 +9,7 @@
    <%= f.label '名'%>
    <%= f.text_field :name,class:"horse-name"%>
       <%= f.label '性'%>
-   <%= f.text_field :name,class:"horse-name"%>
+        <%= f.collection_select(:horsegender_id, Horsegender.all, :id, :name, {}, {class:"select-box", id:"horse-gender"}) %>
 <div class='input-birth-wrap'>
 <%= f.label '生年月日'%><br>
       <%= raw sprintf(

@@ -8,7 +8,7 @@
         <div class="head-right">
         <div class="login-box">
         <%if user_signed_in? && current_user.id == 1%>
-          <%= link_to '管理' ,new_user_path,class:"manage"%>
+          <%= link_to '管理' ,horses_path,class:"manage"%>
           <% end %>
           <% if user_signed_in?%>
             <%= link_to "ログアウト",destroy_user_session_path,method: :delete ,class:"logout" %>
