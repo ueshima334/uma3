@@ -1,17 +1,24 @@
 <div class="user-new-top">
-<%= link_to '戻る',surveys_path,class:'survey-return-btn'%>
+<%= link_to '戻る',root_path,class:'survey-return-btn'%>
 </div>
 
 <div class="user-new-main">
+ <div class="horse-title">
  馬の登録
+ </div>
  <div class="user-new-forms">
    <%= form_with model:@horse,local:true do |f| %>
-   <%= f.label '名'%>
+   <div class="input-name-wrap">
+   <%= f.label '名'%><br>
    <%= f.text_field :name,class:"horse-name"%>
-      <%= f.label '性'%>
-        <%= f.collection_select(:horsegender_id, Horsegender.all, :id, :name, {}, {class:"select-box", id:"horse-gender"}) %>
+  
+  </div>
+   <div class="input-gender-wrap">
+      <%= f.label '性'%><br>
+        <%= f.collection_select(:horsegender_id, Horsegender.all, :id, :name, {}, {class:"horse-gender-select", id:"horse-gender"}) %>
+</div>
+<%= f.label '生年月日'%>
 <div class='input-birth-wrap'>
-<%= f.label '生年月日'%><br>
       <%= raw sprintf(
                   f.date_select(
                     :birthday,
@@ -19,11 +26,14 @@
                     id:"birth-date",
                     use_month_numbers: true,
                     prompt:'--',
-                    start_year: 1930,
-                    end_year: (Time.now.year - 5),
+                    start_year: 1990,
+                    end_year: (Time.now.year),
                     date_separator: '%s'),
                   "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
-    </div>   
+    </div>
+    <div class="input-horse-btn">
+    <%= f.submit '登録',class:"horse-btn"%>
+    </div> 
     <%end%>
    </div>
 </div>

@@ -1,0 +1,35 @@
+.user-new-top{
+  padding: 10px 10px;
+}
+
+.horse-title{
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.user-new-main{
+  padding: 30px 30px;
+}
+
+.user-new-forms{
+  display: flex;
+  flex-direction: column;
+}
+
+.horse-name{
+  width: 200px;
+}
+/* 馬性選択フォーム------------ */
+.horse-gender-select{
+  width: 100px;
+  height: 30px;
+}
+
+.input-birth-wrap{
+  display: flex;
+}
+
+.input-horse-btn{
+  padding-top: 20px;
+}
