@@ -2,33 +2,14 @@
 <%= link_to '戻る',root_path,class:'survey-return-btn'%>
 </div>
 
-<div class="user-new-main">
-<div class="send-judge">
-<%= notice%>
-<%= alert %>
-</div>
- <div class="horse-title">
- 馬の登録
- </div>
- <div class="user-new-forms">
-   <%= form_with model:@horse,local:true do |f| %>
-   <div class="input-name-wrap">
-   <%= f.label '名'%><br>
-   <%= f.text_field :name,class:"horse-name"%>
-  
-  </div>
-   <div class="input-gender-wrap">
-      <%= f.label '性'%><br>
-        <%= f.collection_select(:horsegender_id, Horsegender.all, :id, :name, {}, {class:"horse-gender-select", id:"horse-gender"}) %>
-</div>
-<div class='input-birth-wrap'>
-<%= f.label '齢'%><br>
-<%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"horse-age-select", id:"horse-age"}) %>
+<div class= "horse-index">
 
-    </div>
-    <div class="input-horse-btn">
-    <%= f.submit '登録',class:"horse-btn"%>
-    </div> 
-    <%end%>
-   </div>
+<div class="enter-horse-new">
+  <%= link_to '馬の登録',new_horse_path %>
+</div>
+
+<div class="enter-race-new">
+  <%= link_to 'レースの登録',"#"%>
+</div>
+
 </div>

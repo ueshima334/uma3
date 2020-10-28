@@ -2,6 +2,9 @@ class HorsesController < ApplicationController
 
 
   def index
+  end
+
+  def new
     @horse = Horse.new
   end
 
@@ -10,17 +13,18 @@ class HorsesController < ApplicationController
     if  horse.valid? && Horse.where(name:params[:name]).empty?
       horse.save
       flash[:notice] = '保存に成功しました'
-      redirect_to horses_path
+      redirect_to :action =>  'new'
     else
       flash[:alert] = '保存に失敗しました'
-      render :index
+      render :new
     end
   
   end
 
+
 private
 def horse_params
-  params.permit(:name,:horsegender_id,:age_id)
+  params.require(:horse).permit(:name,:horsegender_id,:age_id)
 end
 
 end

@@ -1,44 +1,15 @@
-.user-new-top{
-  padding: 10px 10px;
+.horse-index{
+  padding: 50px 50px;
 }
 
-.horse-title{
-  margin-bottom: 20px;
+.enter-horse-new,.enter-race-new{
+  padding: 30px 30px;
+  width: 40vw;
+  border: solid 1px black;
   font-weight: bold;
   font-size: 20px;
 }
 
-.user-new-main{
-  padding: 30px 30px;
-}
-
-.user-new-forms{
-  display: flex;
-  flex-direction: column;
-}
-
-.horse-name{
-  width: 200px;
-}
-/* 馬性選択フォーム------------ */
-.horse-gender-select,.horse-age-select{
-  width: 100px;
-  height: 30px;
-}
-
-.input-horse-btn{
-  padding-top: 20px;
-}
-
-.send-judge{
-  width: 200px;
-  padding: 20px 20px;
-}
-
-.notice{
-  background-color: blue;
-}
-
-.alert{
-  background-color: red;
+.enter-horse-new{
+  margin-bottom: 20px;
 }
