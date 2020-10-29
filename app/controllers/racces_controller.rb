@@ -1,0 +1,2 @@
+class RaccesController < ApplicationController
+end
