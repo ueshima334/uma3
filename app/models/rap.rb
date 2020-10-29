@@ -1,0 +1,2 @@
+class Rap < ApplicationRecord
+end

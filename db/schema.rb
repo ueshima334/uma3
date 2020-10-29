@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_28_074549) do
+ActiveRecord::Schema.define(version: 2020_10_29_091605) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -68,6 +68,55 @@ ActiveRecord::Schema.define(version: 2020_10_28_074549) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "races", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "name", null: false
+    t.date "day", null: false
+    t.string "racetrack", null: false
+    t.string "horse1"
+    t.string "horse2"
+    t.string "horse3"
+    t.string "horse4"
+    t.string "horse5"
+    t.string "horse6"
+    t.string "horse7"
+    t.string "horse8"
+    t.string "horse9"
+    t.string "horse10"
+    t.string "horse11"
+    t.string "horse12"
+    t.string "horse13"
+    t.string "horse14"
+    t.string "horse15"
+    t.string "horse16"
+    t.string "horse17"
+    t.string "horse18"
+  end
+
+  create_table "raps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "m200"
+    t.string "m400"
+    t.string "m600"
+    t.string "m800"
+    t.string "m1000"
+    t.string "m1200"
+    t.string "m1400"
+    t.string "m1600"
+    t.string "m1800"
+    t.string "m2000"
+    t.string "m2200"
+    t.string "m2400"
+    t.string "m2600"
+    t.string "m2800"
+    t.string "m3000"
+    t.string "m3200"
+    t.bigint "race_id"
+    t.index ["race_id"], name: "index_raps_on_race_id"
+  end
+
   create_table "surveys", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -110,6 +159,7 @@ ActiveRecord::Schema.define(version: 2020_10_28_074549) do
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "raps", "races"
   add_foreign_key "surveys", "users"
   add_foreign_key "votes", "surveys"
   add_foreign_key "votes", "users"
