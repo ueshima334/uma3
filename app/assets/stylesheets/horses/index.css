@@ -1,0 +1,15 @@
+.horse-index{
+  padding: 50px 50px;
+}
+
+.enter-horse-new,.enter-race-new{
+  padding: 30px 30px;
+  width: 40vw;
+  border: solid 1px black;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.enter-horse-new{
+  margin-bottom: 20px;
+}
