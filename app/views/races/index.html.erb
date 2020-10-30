@@ -1,0 +1,10 @@
+<%= link_to '戻る',horses_path,class:'survey-return-btn'%>
+
+
+<%= form_with model:@race,local: true do |f| %>
+
+<%= f.text_field :url ,class:"race-url"%>
+
+<%= f.submit '登録',class:"url-btn"%>
+
+<% end%>

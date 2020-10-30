@@ -3,6 +3,7 @@ class CreateRaps < ActiveRecord::Migration[6.0]
     create_table :raps do |t|
 
       t.timestamps
+      t.string :pace,null: false
       t.string :m200
       t.string :m400
       t.string :m600

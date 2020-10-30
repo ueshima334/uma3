@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 2020_10_29_091605) do
   create_table "raps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "pace", null: false
     t.string "m200"
     t.string "m400"
     t.string "m600"
