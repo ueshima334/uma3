@@ -20,7 +20,8 @@ def create
   unless rap.valid?
     race.destroy
     redirect_to :action =>  'index'
-  end
+    # rapデータの保存に失敗した場合、同時に保存したracceレコードを削除する。
+    end
 
   redirect_to :action =>  'index'
 
