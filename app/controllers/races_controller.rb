@@ -11,19 +11,23 @@ def create
 
   race = Race.race_save(xml)
 
-  rap = Rap.rap_save(xml,race)
-
-  unless race.valid?
-    redirect_to :action =>  'index'
+  if race.valid?
+     race.save
+  else
+    @race = Race.new
+    render :index and return
   end
 
-  unless rap.valid?
-    race.destroy
-    redirect_to :action =>  'index'
-    # rapデータの保存に失敗した場合、同時に保存したracceレコードを削除する。
-    end
+  rap = Rap.rap_save(xml,race)
 
-  redirect_to :action =>  'index'
+  if rap.save
+    redirect_to :action =>  'index' and return
+
+  else
+    race.destroy
+    @race = Race.new
+    render :index and return
+  end
 
 end
 
