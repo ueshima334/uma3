@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 2020_10_29_091605) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "name", null: false
     t.date "day", null: false
+    t.string "place", null: false
     t.string "racetrack", null: false
     t.string "horse1"
     t.string "horse2"
