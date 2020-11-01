@@ -1,0 +1,2 @@
+class RapsController < ApplicationController
+end

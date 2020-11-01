@@ -1,0 +1,2 @@
+module RapsHelper
+end
