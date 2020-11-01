@@ -1,7 +1,13 @@
 class RacesController < ApplicationController
 
-def index
+def index  
+
+  if current_user.id == 1
   @race = Race.new
+  else
+    redirect_to root_path and return
+  end
+
 end
 
 def create
