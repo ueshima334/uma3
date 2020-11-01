@@ -1,6 +1,6 @@
 class RacesController < ApplicationController
 
-def index  
+def new  
 
   if current_user.id == 1
   @race = Race.new

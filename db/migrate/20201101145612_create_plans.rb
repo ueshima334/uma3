@@ -4,6 +4,7 @@ class CreatePlans < ActiveRecord::Migration[6.0]
 
       t.timestamps
       t.string :title,null: false
+      t.string :grade
       t.date :day,null: false
       t.string :horse1
       t.string :horse2
