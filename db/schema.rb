@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_29_091605) do
+ActiveRecord::Schema.define(version: 2020_11_01_145612) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -58,6 +58,31 @@ ActiveRecord::Schema.define(version: 2020_10_29_091605) do
     t.bigint "post_id"
     t.index ["post_id"], name: "index_likes_on_post_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "plans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "title", null: false
+    t.date "day", null: false
+    t.string "horse1"
+    t.string "horse2"
+    t.string "horse3"
+    t.string "horse4"
+    t.string "horse5"
+    t.string "horse6"
+    t.string "horse7"
+    t.string "horse8"
+    t.string "horse9"
+    t.string "horse10"
+    t.string "horse11"
+    t.string "horse12"
+    t.string "horse13"
+    t.string "horse14"
+    t.string "horse15"
+    t.string "horse16"
+    t.string "horse17"
+    t.string "horse18"
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
