@@ -1,5 +1,5 @@
 class HorsesController < ApplicationController
-
+  before_action :move_to_index, only: [:index,:new]
 
   def index
   end
@@ -23,8 +23,13 @@ class HorsesController < ApplicationController
 
 
 private
+
 def horse_params
   params.require(:horse).permit(:name,:horsegender_id,:age_id)
+end
+
+def move_to_index
+  redirect_to root_path unless user_signed_in? && current_user.id == 1
 end
 
 end

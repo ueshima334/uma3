@@ -4,6 +4,7 @@ root to: "users#index"
 resources :users,only:[:show]
 resources :horses,only:[:index,:new,:create]
 resources :rooms,only:[:index]
+resources :races,only:[:index,:create]
 resources :posts do
   resources :comments,only: :create
   get '/likes',to: 'likes#create'

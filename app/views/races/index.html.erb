@@ -1,0 +1,48 @@
+<div class="user-new-top">
+<%= link_to '戻る',root_path,class:'survey-return-btn'%>
+</div>
+
+
+
+
+<div class="race-new-all">
+
+<div class="race-new-title">
+レース登録
+</div>
+
+<div class="even-race-content">
+
+200ｍで割り切れるレース<br>
+(例) 1600m , 2400m 等 
+
+<div class="even-race-form">
+<%= form_with model:@race,local: true do |f| %>
+
+<%= f.text_field :url ,class:"race-url"%>
+
+<%= f.submit '登録',class:"url-btn"%>
+
+<% end%>
+</div>
+
+</div>
+
+<div class="even-race-content">
+
+200ｍで割り切れないレース<br>
+(例) 2500m 等 
+
+<div class="even-race-form">
+<%= form_with model:@race,local: true do |f| %>
+
+<%= f.text_field :url ,class:"race-url"%>
+
+<%= f.submit '登録',class:"url-btn"%>
+
+<% end%>
+</div>
+
+</div>
+
+</div>
