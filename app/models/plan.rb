@@ -3,6 +3,8 @@ class Plan < ApplicationRecord
   with_options presence: true do
     validates :title
     validates :day
+    validates :grade
+    validates :terms
   end
 
 
@@ -22,9 +24,16 @@ class Plan < ApplicationRecord
    plan = Plan.new(title:title,grade:grade,day:day,terms:terms,horse1:@horse18,horse2:@horse17,horse3:@horse16,horse4:@horse15,horse5:@horse14,
     horse6:@horse13,horse7:@horse12,horse8:@horse11,horse9:@horse10,horse10:@horse9,horse11:@horse8,horse12:@horse7,horse13:@horse6,
     horse14:@horse5,horse15:@horse4,horse16:@horse3,horse17:@horse2,horse18:@horse1)
-
-     plan.save
+binding.pry
+    if Plan.exists?(title:title,day:day) #既に登録されているレースの場合、登録できない
+      @plan = Plan.new
+     return @plan
+  
+    else plan.save
+  
      return plan
+    
+    end
     
   end
 end
