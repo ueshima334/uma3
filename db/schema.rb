@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2020_11_02_085415) do
     t.string "grade"
     t.string "terms", null: false
     t.date "day", null: false
+    t.string "place", null: false
     t.string "horse1"
     t.string "horse2"
     t.string "horse3"

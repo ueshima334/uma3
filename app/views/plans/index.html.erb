@@ -13,7 +13,8 @@
 	</div>
 	<div class="panel_area">
 		<div id="panel1" class="tab_panel">
-			
+		
+    
       <div class="panel-race">
 
         <div class="panel-race-day">
@@ -50,22 +51,24 @@
 		</div>
 		<div id="panel2" class="tab_panel">
 			
+    	<%= @plan.where(grade:'GII'||'GIII').each do |plan|%>
+
       <div class="panel-race">
 
         <div class="panel-race-day">
-          2020/11/07
+          <%= plan.day %>
         </div>
 
        <div class="panel-race-area">
-          阪神
+          <%= plan.place %>
         </div>
 
         <div class="panel-race-name">
-          ファンタジーS
+          <%= plan.title %>
          </div>
 
       </div>
-
+<% end %>
 		</div>
 		<div id="panel3" class="tab_panel">
 

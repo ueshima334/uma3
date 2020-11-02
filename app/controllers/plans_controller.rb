@@ -1,6 +1,9 @@
 class PlansController < ApplicationController
 
 def index
+  @plan = Plan.all.order('day DESC')
+  binding.pry
+
 end
 
 def new
