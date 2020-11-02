@@ -4,6 +4,11 @@
 
 <div class="race-new-all">
 
+<div class="send-judge">
+<%= notice%>
+<%= alert %>
+</div>
+
 <div class="race-new-title">
 レース登録
 </div>
@@ -36,6 +41,106 @@
 <%= f.text_field :url ,class:"race-url"%>
 
 <%= f.submit '登録',class:"url-btn"%>
+
+<% end%>
+</div>
+
+</div>
+
+
+<div class="race-content-sub">
+
+↓レース登録に失敗する場合フォームに直接入力↓<br>
+<button id="subform-btn">フォームを表示</button>
+
+<div id="race-form-sub">
+<%= form_with model:@race,local: true do |f| %>
+
+<%= f.label '名称',class:'sub-form'%>
+<%= f.text_field :name ,class:"sub-race-url"%><br>
+<%= f.label '日時',class:'sub-form'%>
+<%= f.date_field :day ,class:"sub-race-url"%><br>
+<%= f.label '場所',class:'sub-form'%>
+<%= f.collection_select(:place, Place.all, :name, :name, {}, {class:"sub-race-url", id:"sub-race-url"}) %><br>
+<%= f.label '馬場',class:'sub-form'%>
+<%= f.collection_select(:racetrack, Racetrack.all, :name, :name, {}, {class:"sub-race-url", id:"sub-race-url"}) %><br>
+
+<%= f.label '1着'%>
+<%= f.text_field :horse1 ,class:"sub-race-url"%><br>
+<%= f.label '2着'%>
+<%= f.text_field :horse2 ,class:"sub-race-url"%><br>
+<%= f.label '3着'%>
+<%= f.text_field :horse3 ,class:"sub-race-url"%><br>
+<%= f.label '4着'%>
+<%= f.text_field :horse4 ,class:"sub-race-url"%><br>
+<%= f.label '5着'%>
+<%= f.text_field :horse5 ,class:"sub-race-url"%><br>
+<%= f.label '6着'%>
+<%= f.text_field :horse6 ,class:"sub-race-url"%><br>
+<%= f.label '7着'%>
+<%= f.text_field :horse7 ,class:"sub-race-url"%><br>
+<%= f.label '8着'%>
+<%= f.text_field :horse8 ,class:"sub-race-url"%><br>
+<%= f.label '9着'%>
+<%= f.text_field :horse9 ,class:"sub-race-url"%><br>
+<%= f.label '10着'%>
+<%= f.text_field :horse10 ,class:"sub-race-url"%><br>
+<%= f.label '11着'%>
+<%= f.text_field :horse11 ,class:"sub-race-url"%><br>
+<%= f.label '12着'%>
+<%= f.text_field :horse12 ,class:"sub-race-url"%><br>
+<%= f.label '13着'%>
+<%= f.text_field :horse13 ,class:"sub-race-url"%><br>
+<%= f.label '14着'%>
+<%= f.text_field :horse14 ,class:"sub-race-url"%><br>
+<%= f.label '15着'%>
+<%= f.text_field :horse15 ,class:"sub-race-url"%><br>
+<%= f.label '16着'%>
+<%= f.text_field :horse16 ,class:"sub-race-url"%><br>
+<%= f.label '17着'%>
+<%= f.text_field :horse17 ,class:"sub-race-url"%><br>
+<%= f.label '18着'%>
+<%= f.text_field :horse18 ,class:"sub-race-url"%><br><br>
+
+ラップタイム<br>
+<%= f.label 'ペース'%>
+<%= f.text_field :pace ,class:"sub-race-url"%><br>
+
+<%= f.label '200ｍ'%>
+<%= f.text_field :m200 ,class:"sub-race-url"%><br>
+<%= f.label '400ｍ'%>
+<%= f.text_field :m ,class:"sub-race-url"%><br>
+<%= f.label '600ｍ'%>
+<%= f.text_field :m ,class:"sub-race-url"%><br>
+<%= f.label '800ｍ'%>
+<%= f.text_field :m ,class:"sub-race-url"%><br>
+<%= f.label '1000ｍ'%>
+<%= f.text_field :m ,class:"sub-race-url"%><br>
+<%= f.label '1200ｍ'%>
+<%= f.text_field :m ,class:"sub-race-url"%><br>
+<%= f.label '1400ｍ'%>
+<%= f.text_field :m ,class:"sub-race-url"%><br>
+<%= f.label '1600ｍ'%>
+<%= f.text_field :m ,class:"sub-race-url"%><br>
+<%= f.label '1800ｍ'%>
+<%= f.text_field :m ,class:"sub-race-url"%><br>
+<%= f.label '2000ｍ'%>
+<%= f.text_field :m ,class:"sub-race-url"%><br>
+<%= f.label '2200ｍ'%>
+<%= f.text_field :m ,class:"sub-race-url"%><br>
+<%= f.label '2400ｍ'%>
+<%= f.text_field :m ,class:"sub-race-url"%><br>
+<%= f.label '2600ｍ'%>
+<%= f.text_field :m ,class:"sub-race-url"%><br>
+<%= f.label '2800ｍ'%>
+<%= f.text_field :m ,class:"sub-race-url"%><br>
+<%= f.label '3000ｍ'%>
+<%= f.text_field :m ,class:"sub-race-url"%><br>
+<%= f.label '3200ｍ'%>
+<%= f.text_field :m ,class:"sub-race-url"%><br>
+
+
+<%= f.submit '登録',class:"sub-form-btn"%>
 
 <% end%>
 </div>

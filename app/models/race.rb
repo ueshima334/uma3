@@ -7,6 +7,7 @@ class Race < ApplicationRecord
     validates :name
     validates :racetrack
     validates :day
+    validates :horse1
   end
 
 def self.race_save(xml)
@@ -17,11 +18,9 @@ def self.race_save(xml)
   @racetrack = xml.xpath('//*[@id="tab1"]/div[2]/div[1]/div[1]/div[1]/div[2]/div/div/ul/li[2]').text
   #  レース名、日付、馬場状態、ペースのテキストをそれぞれインスタンス変数に代入
   
-  @horses = []
   18.times do |n|
     n += 1 # trの番号
   (eval %(@horse#{n} = xml.xpath("//*[@id='tab1']/div[2]/div[3]/table/tbody/tr[#{n}]/td[4]").text))
-  # 1着〜18着の馬名を順に@horsesの配列に入れていく
   end
 
   @race = Race.new(name: @racename,day: @day,place:@place,racetrack: @racetrack,horse1: @horse1,horse2: @horse2,horse3: @horse3,horse4: @horse4,
@@ -36,6 +35,13 @@ def self.race_save(xml)
    return @race
   
   end
+
+end
+
+def self.form_race_save(race)
+
+   race.save
+   return race
 
 end
 

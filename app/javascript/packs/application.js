@@ -12,6 +12,7 @@ require("image.js")
 require("slide.js")
 require("chartkick")
 require("chart.js")
+require("subform.js")
 
 
 //= require rails-ujs

@@ -10,12 +10,14 @@ class HorsesController < ApplicationController
 
   def create
     horse = Horse.new(horse_params)
-    if  horse.valid? && Horse.where(name:params[:name]).empty?
+    if  horse.valid? && Horse.where(name:params[:horse][:name]).empty?
+      binding.pry
       horse.save
       flash[:notice] = '保存に成功しました'
       redirect_to :action =>  'new'
     else
       flash[:alert] = '保存に失敗しました'
+      @horse = Horse.new
       render :new
     end
   
