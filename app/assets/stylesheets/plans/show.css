@@ -1,0 +1,32 @@
+.plan-show-all{
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.plan-show-title{
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.plan-show-info{
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 100px;
+}
+
+.plan-show-index{
+  font-size: 30px;
+  border-bottom: solid 1px black;
+}
+
+.plan-show-horses{
+  padding: 20px 0;
+}
+
+.plan-show-horse{
+  padding: 10px 0;
+  font-size: 20px;
+}
