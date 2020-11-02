@@ -13,8 +13,7 @@ end
 def create
 
 # URL登録時の処理-------
-
-if params.include?(:url)
+if params[:race].include?(:url)
 
   data = params.require(:race).permit(:url)
   
