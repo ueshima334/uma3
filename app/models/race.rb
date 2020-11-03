@@ -27,7 +27,7 @@ def self.race_save(xml)
   @race = Race.new(name: @racename,day: @day,place:@place,racetrack: @racetrack,horse1: @horse1,horse2: @horse2,horse3: @horse3,horse4: @horse4,
     horse5: @horse5,horse6: @horse6,horse7: @horse7,horse8: @horse8,horse9: @horse9,horse10: @horse10,horse11: @horse11,
     horse12: @horse12,horse13: @horse13,horse14: @horse14,horse15: @horse15,horse16: @horse16,horse17: @horse17,horse18: @horse18)
-binding.pry
+
     if Race.exists?(name:@racename,day:@day) #既に登録されているレースの場合、登録できない
     @race = Race.new
    return @race

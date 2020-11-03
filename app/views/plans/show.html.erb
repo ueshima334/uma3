@@ -32,7 +32,7 @@
   <% if @plan.send("horse#{n}") == ""%>
   <% break%>
   <% else%>
-  <%= link_to @plan.send("horse#{n}"),'#' %>
+  <%= link_to @plan.send("horse#{n}"),horse_path(Horse.find_by(name: @plan.send("horse#{n}"))) %>
   <% end %>
   </div>
   

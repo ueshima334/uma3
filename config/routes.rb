@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 root to: "users#index"
 resources :users,only:[:show]
-resources :horses,only:[:index,:new,:create]
+resources :horses,only:[:index,:new,:create,:show]
 resources :rooms,only:[:index]
 resources :races,only:[:new,:create]
 resources :plans,only:[:index,:new,:create,:show]
