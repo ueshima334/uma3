@@ -47,4 +47,15 @@ def self.form_race_save(race)
 
 end
 
+def self.race_search(horsename)
+
+  race = Race.where(horse1:horsename).or(Race.where(horse2:horsename)).or(Race.where(horse3:horsename)).or(Race.where(horse4:horsename))
+  .or(Race.where(horse5:horsename)).or(Race.where(horse6:horsename)).or(Race.where(horse7:horsename)).or(Race.where(horse8:horsename))
+  .or(Race.where(horse9:horsename)).or(Race.where(horse10:horsename)).or(Race.where(horse11:horsename)).or(Race.where(horse12:horsename))
+  .or(Race.where(horse13:horsename)).or(Race.where(horse14:horsename)).or(Race.where(horse15:horsename)).or(Race.where(horse16:horsename))
+  .or(Race.where(horse17:horsename)).or(Race.where(horse18:horsename)).order('day DESC')
+#選択された馬が出走していた過去のレースを全て取得して戻り値とする。
+
+end
+
 end

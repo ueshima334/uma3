@@ -1,0 +1,104 @@
+<%= render "shared/header" %>
+<%= link_to '戻る',plans_path,class:'return-btn'%>
+
+<div class="horse-show-all">
+
+  <div class="horse-show-title">
+    <%= "#{@horse.name}のラップ分析" %>
+  </div>
+
+<div class="horse-show-race">
+<%= "#{@race[0].name}の平均ラップ" %>
+</div>
+
+<div class="horse_tab_wrap">
+	<input id="horse_tab1" type="radio" name="horse_tab_btn" checked>
+	<input id="horse_tab2" type="radio" name="horse_tab_btn">
+	<input id="horse_tab3" type="radio" name="horse_tab_btn">
+ 	<input id="horse_tab4" type="radio" name="horse_tab_btn">
+
+
+	<div class="horse_tab_area",id="aiueo">
+		<label class="horse_tab1_label" for="horse_tab1">良</label>
+		<label class="horse_tab2_label" for="horse_tab2">稍</label>
+		<label class="horse_tab3_label" for="horse_tab3">重</label>
+ 		<label class="horse_tab4_label" for="horse_tab4">不</label>
+	</div>
+
+	<div class="horse_panel_area">
+		<div id="horse_panel1" class="horse_tab_panel">
+		<%= line_chart @rap , min: 10, max: 14,curve: false,reverse: true %>
+		</div>
+		<div id="horse_panel2" class="horse_tab_panel">
+asdasdf
+		</div>
+		<div id="horse_panel3" class="horse_tab_panel">
+ffffaaa
+		</div>
+
+    		<div id="horse_panel4" class="horse_tab_panel">
+ffffdfff
+		</div>
+</div>
+
+</div>
+<%# 過去のラップ--------------- %>
+
+<div class="horse-show-title2">
+ 過去のラップ
+</div>
+
+<div class="horse-show-contents">
+
+<div class="horse-show-content">
+<div class="horse-show-info">
+<div class="horse-show-day">
+2020/06/18
+</div>
+<div class="horse-show-racename">
+宝塚記念
+</div>
+<div class="horse-show-racetrack">
+重
+</div>
+<div class="horse-show-place">
+阪神競馬場
+</div>
+<div class="horse-show-rank">
+1着
+</div>
+</div>
+<div class="horse-show-rap">
+グラフ
+</div>
+
+</div>
+
+
+<div class="horse-show-content">
+
+<div class="horse-show-info">
+  <div class="horse-show-day">
+  2020/06/18
+  </div>
+  <div class="horse-show-racename">
+  宝塚記念
+  </div>
+  <div class="horse-show-racetrack">
+  重
+  </div>
+  <div class="horse-show-place">
+  阪神競馬場
+  </div>
+  <div class="horse-show-rank">
+  1着
+  </div>
+</div>
+
+<div class="horse-show-rap">
+グラフ
+</div>
+</div>
+
+
+</div>
