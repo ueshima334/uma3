@@ -8,7 +8,7 @@
   </div>
 
 <div class="horse-show-race">
-<%= "#{@race[0].name}の平均ラップ" %>
+<%= "#{params[:racename]}のラップ" %>
 </div>
 
 <div class="horse_tab_wrap">
@@ -27,17 +27,28 @@
 
 	<div class="horse_panel_area">
 		<div id="horse_panel1" class="horse_tab_panel">
-		<%= line_chart @rap , min: 10, max: 14,curve: false,reverse: true %>
-		</div>
+		<%= line_chart @target_rap[0] , min: 10, max: 14,curve: false unless (@target_rap[0]).include?(nil) %>
+
+    <%= (Race.find_by(name:params[:racename],racetrack:"良")).day unless (@target_rap[0]).include?(nil)%>
+
+    </div>
 		<div id="horse_panel2" class="horse_tab_panel">
-asdasdf
+		<%= line_chart @target_rap[1] , min: 10, max: 14,curve: false unless (@target_rap[1]).include?(nil) %>
+    <%= (Race.find_by(name:params[:racename],racetrack:"稍")).day unless (@target_rap[1]).include?(nil)%>
+
 		</div>
 		<div id="horse_panel3" class="horse_tab_panel">
-ffffaaa
+		<%= line_chart @target_rap[2] , min: 10, max: 14,curve: false unless (@target_rap[2]).include?(nil) %>
+
+
+    <%= (Race.find_by(name:params[:racename],racetrack:"重")).day unless (@target_rap[2]).include?(nil)%>
+
 		</div>
 
     		<div id="horse_panel4" class="horse_tab_panel">
-ffffdfff
+		<%= line_chart @target_rap[3] , min: 10, max: 14,curve: false unless (@target_rap[3]).include?(nil) %>
+    <%= (Race.find_by(name:params[:racename],racetrack:"不")).day unless (@target_rap[3]).include?(nil)%>
+
 		</div>
 </div>
 
@@ -45,62 +56,38 @@ ffffdfff
 <%# 過去のラップ--------------- %>
 
 <div class="horse-show-title2">
- 過去のラップ
+ ＜出走レースのラップ＞
 </div>
-
+<% n = 0 %>
+<% @rap.each do |rap| %>
 <div class="horse-show-contents">
 
 <div class="horse-show-content">
 <div class="horse-show-info">
 <div class="horse-show-day">
-2020/06/18
+<%= @race[n].day%>
 </div>
 <div class="horse-show-racename">
-宝塚記念
+<%= @race[n].name%>
 </div>
 <div class="horse-show-racetrack">
-重
+<%= @race[n].racetrack%>
 </div>
 <div class="horse-show-place">
-阪神競馬場
+<%= "#{@race[n].place}競馬場" %>
 </div>
 <div class="horse-show-rank">
-1着
+<%= "#{@rank[n].index(@horse.name) + 1}着"%>
 </div>
 </div>
 <div class="horse-show-rap">
-グラフ
+		<%= line_chart rap , min: 10, max: 14,curve: false,reverse: true %>
+
 </div>
 <div class="horse-show-pace">
-ミドル
+<%= @race[n].rap.pace%>
 </div>
 </div>
-
-
-<div class="horse-show-content">
-
-<div class="horse-show-info">
-  <div class="horse-show-day">
-  2020/06/18
-  </div>
-  <div class="horse-show-racename">
-  宝塚記念
-  </div>
-  <div class="horse-show-racetrack">
-  重
-  </div>
-  <div class="horse-show-place">
-  阪神競馬場
-  </div>
-  <div class="horse-show-rank">
-  1着
-  </div>
-</div>
-
-<div class="horse-show-rap">
-グラフ
-</div>
-</div>
-
-
+<% n += 1 %>
+<% end %>
 </div>

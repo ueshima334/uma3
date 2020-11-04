@@ -24,8 +24,14 @@ class HorsesController < ApplicationController
 
   def show
     @horse = Horse.find(params[:id])
+
     @race = Race.race_search(@horse.name)
-    @rap = rapmake(@race)
+    @rap = Rap.rap_make(@race)
+
+    @target_race = Race.where(name:params[:racename]).order('day DESC')
+    @target_rap = Rap.target_rap_make(params[:racename])
+
+    @rank = Race.rank_search(@race)
   end
 
 private
@@ -36,23 +42,6 @@ end
 
 def move_to_index
   redirect_to root_path unless user_signed_in? && current_user.id == 1
-end
-
-
-def rapmake(race)
-  raps = []
-  rap =  Rap.find_by(race_id:race[0].id) 
-
-  raps << ['200m',rap.m200]
-  raps << ['400m',rap.m400]
-  raps << ['600m',rap.m600]
-  raps << ['800m',rap.m800]
-  raps << ['1000m',rap.m1000]
-  raps << ['1200m',rap.m1200]
-  raps << ['1400m',rap.m1400]
-  raps << ['1600m',rap.m1600]
-  raps << ['1800m',rap.m1800]
-  raps << ['2000m',rap.m2000]
 end
 
 end

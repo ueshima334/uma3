@@ -53,9 +53,32 @@ def self.race_search(horsename)
   .or(Race.where(horse5:horsename)).or(Race.where(horse6:horsename)).or(Race.where(horse7:horsename)).or(Race.where(horse8:horsename))
   .or(Race.where(horse9:horsename)).or(Race.where(horse10:horsename)).or(Race.where(horse11:horsename)).or(Race.where(horse12:horsename))
   .or(Race.where(horse13:horsename)).or(Race.where(horse14:horsename)).or(Race.where(horse15:horsename)).or(Race.where(horse16:horsename))
-  .or(Race.where(horse17:horsename)).or(Race.where(horse18:horsename)).order('day DESC')
-#選択された馬が出走していた過去のレースを全て取得して戻り値とする。
+  .or(Race.where(horse17:horsename)).or(Race.where(horse18:horsename)).includes(:rap).order('day DESC')
+#選択された馬が出走していた過去のレースを降順で全て取得し、戻り値とする。
 
 end
+
+def self.rank_search(races)
+
+rank = []
+  races.each do |race|
+n = 1
+    horses = []
+
+    while race.send("horse#{n}") != ""
+    horses << race.send("horse#{n}")
+    n += 1
+if n == 18
+  break
+end
+    end
+    rank << horses 
+
+  end
+
+  return rank
+
+end
+
 
 end

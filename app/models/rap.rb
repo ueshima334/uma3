@@ -37,4 +37,64 @@ def self.form_rap_save(rap)
 
 end
 
+def self.rap_make(races)
+  raps = []
+  race_rap = []
+  races.each do |race|
+n = 200
+    while race.rap.send("m#{n}") != "" do
+
+      race_rap << ["#{n}m",race.rap.send("m#{n}")] 
+     n += 200
+
+    end
+    
+    raps << race_rap 
+    race_rap = []
+  
+  end
+
+  return raps
+
+end
+
+def self.target_rap_make(racename)
+
+  target_race = Race.where(name:racename).order('day DESC') #選択されたレース名に当てはまるレコードを全て取得
+
+  target_races = []
+  target_races << target_race.find_by(racetrack:'良') #選択されたレースの内、racetrackカラムの種類毎に各一つレースを取得する。
+  target_races << target_race.find_by(racetrack:'稍')
+  target_races << target_race.find_by(racetrack:'重')
+  target_races << target_race.find_by(racetrack:'不')
+  
+  raps = []
+
+  target_races.each do |race|
+    race_rap = []
+
+    n = 200
+
+    if race == nil #該当するレースが存在しない場合空欄を配列に代入する。
+      race_rap << nil
+      raps << race_rap
+      next
+    end
+
+    while race.rap.send("m#{n}") != "" do
+      
+      race_rap << ["#{n}m",race.rap.send("m#{n}")] 
+     n += 200
+
+    end
+
+    raps << race_rap
+  end
+
+  return raps
+
+end
+
+
+
 end
