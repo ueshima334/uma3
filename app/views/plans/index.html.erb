@@ -1,0 +1,80 @@
+<%= render "shared/header" %>
+<%= link_to '戻る',root_path,class:'return-btn'%>
+
+<div class="tab_wrap">
+	<input id="tab1" type="radio" name="tab_btn" checked>
+	<input id="tab2" type="radio" name="tab_btn">
+	<input id="tab3" type="radio" name="tab_btn">
+
+	<div class="tab_area">
+		<label class="tab1_label" for="tab1">G1</label>
+		<label class="tab2_label" for="tab2">G2</label>
+		<label class="tab3_label" for="tab3">G3</label>
+	</div>
+	<div class="panel_area">
+		<div id="panel1" class="tab_panel">
+		
+    <% @plan.where(grade:'ＧⅠ').each do |plan| %>
+      <div class="panel-race">
+
+        <div class="panel-race-day">
+          <%= plan.day %>
+        </div>
+
+        <div class="panel-race-area">
+          <%= plan.place %>
+        </div>
+
+        <div class="panel-race-name">
+          <%= link_to plan.title,plan_path(plan) %>
+ 
+       </div>
+      
+       </div>
+<% end %>
+
+
+		</div>
+		<div id="panel2" class="tab_panel">
+			
+    	<% @plan.where(grade:'ＧⅡ').each do |plan|%>
+
+      <div class="panel-race">
+
+        <div class="panel-race-day">
+          <%= plan.day %>
+        </div>
+
+       <div class="panel-race-area">
+          <%= plan.place %>
+        </div>
+
+        <div class="panel-race-name">
+          <%= link_to plan.title,plan_path(plan) %>
+         </div>
+
+      </div>
+<% end %>
+		</div>
+		<div id="panel3" class="tab_panel">
+    	<% @plan.where(grade:'ＧⅢ').each do |plan|%>
+
+			<div class="panel-race">
+
+        <div class="panel-race-day">
+          <%= plan.day %>
+        </div>
+
+        <div class="panel-race-area">
+          <%= plan.place %>
+        </div>
+
+        <div class="panel-race-name">
+          <%= link_to plan.title,plan_path(plan) %>
+         </div>
+
+      </div>
+      <% end %>
+		</div>
+	</div>
+</div>

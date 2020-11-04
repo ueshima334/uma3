@@ -19,3 +19,20 @@
 .even-race-form{
   padding: 10px 0;
 }
+
+.sub-form-btn{
+  margin: 10px 0 ;
+}
+
+.sub-race-url{
+  margin-top: 10px;
+}
+
+#sub-race-url{
+  height: 30px;
+  width: 80px;
+}
+
+#race-form-sub{
+  display: none;
+}

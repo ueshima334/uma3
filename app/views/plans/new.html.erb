@@ -1,0 +1,30 @@
+<div class="user-new-top">
+<%= link_to '戻る',horses_path,class:'survey-return-btn'%>
+</div>
+
+<div class="race-new-all">
+
+<div class="send-judge">
+<%= notice%>
+<%= alert %>
+</div>
+
+<div class="race-new-title">
+開催予定レース登録
+</div>
+
+<div class="even-race-content">
+
+<div class="even-race-form">
+<%= form_with model:@plan,local: true do |f| %>
+
+<%= f.text_field :url ,class:"race-url"%>
+
+<%= f.submit '登録',class:"url-btn"%>
+
+<% end%>
+</div>
+
+</div>
+
+</div>

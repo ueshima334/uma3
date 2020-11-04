@@ -1,13 +1,14 @@
-class CreateRaces < ActiveRecord::Migration[6.0]
+class CreatePlans < ActiveRecord::Migration[6.0]
   def change
-    create_table :races do |t|
+    create_table :plans do |t|
 
       t.timestamps
-      t.string :name,null: false
-      t.date   :day,null: false
+      t.string :title,null: false
+      t.string :grade
+      t.string :terms,null: false
+      t.date :day,null: false
       t.string :place,null: false
-      t.string :racetrack,null: false
-      t.string :horse1,null: false
+      t.string :horse1
       t.string :horse2
       t.string :horse3
       t.string :horse4

@@ -25,6 +25,12 @@ class SurveysController < ApplicationController
     total_vote
   end
 
+def destroy
+  survey = Survey.find(params[:id])
+  survey.destroy
+  redirect_to surveys_path
+end
+
   private
 
   def survey_params

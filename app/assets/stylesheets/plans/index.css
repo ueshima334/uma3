@@ -1,0 +1,36 @@
+.tab_wrap{width:800px; margin:30px auto;}
+input[type="radio"]{display:none;}
+.tab_area{font-size:0; margin:0 10px;}
+.tab_area label{width:250px; margin:0 5px; display:inline-block; padding:12px 0; color:#999; background:#ddd; text-align:center; font-size:20px; cursor:pointer; transition:ease 0.2s opacity;}
+.tab_area label:hover{opacity:0.5;}
+.panel_area{background: #f5f5f5;;}
+.tab_panel{width:100%; padding:20px 0; display:none;}
+.tab_panel p{font-size:14px; letter-spacing:1px; text-align:center;}
+
+#tab1:checked ~ .tab_area .tab1_label{background:#fff; color:#000;}
+#tab1:checked ~ .panel_area #panel1{display:block;}
+#tab2:checked ~ .tab_area .tab2_label{background:#fff; color:#000;}
+#tab2:checked ~ .panel_area #panel2{display:block;}
+#tab3:checked ~ .tab_area .tab3_label{background:#fff; color:#000;}
+#tab3:checked ~ .panel_area #panel3{display:block;}
+
+
+
+
+.panel-race{
+  display: flex;
+  margin: 50px 0;
+  justify-content: space-around;
+}
+
+.panel-race-day{
+  font-size: 20px;
+  width: 50%;
+  text-align: center;
+}
+
+.panel-race-name{
+  font-size: 35px;
+  width: 50%;
+  text-align: center;
+}

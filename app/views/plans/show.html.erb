@@ -1,0 +1,43 @@
+<%= render "shared/header" %>
+<%= link_to '戻る',plans_path,class:'return-btn'%>
+
+<div class="plan-show-all">
+
+  <div class="plan-show-title">
+   <%= @plan.title%>
+  </div>
+
+<div class="plan-show-info">
+
+<div class="plan-show-day">
+  <%= @plan.day %>
+</div>
+
+<div class="plan-show-place">
+  <%= @plan.place %>競馬場
+  </div>
+
+<div class="plan-show-terms">
+  <%= @plan.terms%>
+</div>
+</div>
+
+<div class="plan-show-index">
+出走予定馬
+</div>
+
+<div class="plan-show-horses">
+<% 18.times do |n|%><% n += 1 %>
+  <div class="plan-show-horse">
+  <% if @plan.send("horse#{n}") == ""%>
+  <% break%>
+  <% else%>
+  <%= link_to @plan.send("horse#{n}"),horse_path(Horse.find_by(name: @plan.send("horse#{n}")),racename: "#{@plan.title}") %>
+
+  <% end %>
+  </div>
+  
+<% end %>
+</div>
+
+</div>

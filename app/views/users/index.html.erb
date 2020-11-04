@@ -3,7 +3,7 @@
     <div class="col span-12">
       <div class="head">
         <div class="head-left">
-          <%= image_tag "mainicon.png" ,class: "mainicon" %><%= link_to "My Derby",root_path,class:"title" %>
+         <%= link_to image_tag("maintitle.png" ,width:"400",height:"200"),root_path %>
 		</div>
         <div class="head-right">
         <div class="login-box">
@@ -36,7 +36,7 @@
             <li><%= link_to "マイページ",user_path(current_user) %></li>
          <% end %>
             <li><%= link_to "Umastagram",posts_path %></li>
-            <li><%= link_to "ラップ分析","#" %></li>
+            <li><%= link_to "ラップ分析",plans_path %></li>
             <li><%= link_to "武豊チャレンジ","#" %></li>
             <li><%= link_to "アンケート",surveys_path %></li>
             </ul>
