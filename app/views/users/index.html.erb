@@ -37,7 +37,6 @@
          <% end %>
             <li><%= link_to "Umastagram",posts_path %></li>
             <li><%= link_to "ラップ分析",plans_path %></li>
-            <li><%= link_to "武豊チャレンジ","#" %></li>
             <li><%= link_to "アンケート",surveys_path %></li>
             </ul>
                 </div>
@@ -45,86 +44,57 @@
     </div>
         </div>
     </div>
-    </header>
+
+
     <div class="mainimg">
               <%= image_tag "deepimpact.jpg",class:"main_img" %>
         </div>
-    <main>
-<section>
-<div class="container">
-	<h2 class="catch">Works</h2>
-<div class="row">
-	<div class="col span-4">
-	<figure>
-		<img src="img/catch.jpg" alt="画像">
-		<figcaption>キャプション</figcaption>
-		</figure>
-	</div>
-	<div class="col span-4">
-	<figure>
-		<img src="img/catch.jpg" alt="画像">
-		<figcaption>キャプション</figcaption>
-		</figure>
-	</div>
-	<div class="col span-4">
-	<figure>
-		<img src="img/catch.jpg" alt="画像">
-		<figcaption>キャプション</figcaption>
-		</figure>
-	</div>
-    </div>    
-<div class="row">
-	<div class="col span-4">
-	<figure>
-		<img src="img/catch.jpg" alt="画像">
-		<figcaption>キャプション</figcaption>
-		</figure>
-	</div>
-	<div class="col span-4">
-	<figure>
-		<img src="img/catch.jpg" alt="画像">
-		<figcaption>キャプション</figcaption>
-		</figure>
-	</div>
-	<div class="col span-4">
-	<figure>
-		<img src="img/catch.jpg" alt="画像">
-		<figcaption>キャプション</figcaption>
-		</figure>
-	</div>
-    </div> 
-	<p class="center"><button>その他のギャラリー</button></p>
-        </div>
-</section>
-    </main>
-    <footer>
-<div class="container">
-<div class="row">
-    <div class="col span-4">
-        <h5>フッター１</h5>
-        <p>ここにSNSやテキストなどが入ります。SNSやテキストなどが入ります。</p>
+
+
+<div class="weather-main">
+
+
+	<h2 class="catch">競馬場の天気予報</h2>
+
+<div class="weather-box">
+
+<div class="col-md-3" id="fuchu-weather">
+    <div class="card shadow text-center">
+        <h5><div class="card-header">東京競馬場</div><h5>
+        <div id="weather1"></div>
     </div>
-    <div class="col span-4">
-        <h5>フッター２</h5>
-        <p>ここにSNSやテキストなどが入ります。SNSやテキストなどが入ります。</p>
-    </div>
-    <div class="col span-4">
-        <h5>フッター３</h5>
-        <p>ここにSNSやテキストなどが入ります。SNSやテキストなどが入ります。</p>
-    </div>
-        </div>
 </div>
-    </footer>
-    <div class="copyright">
-<div class="container">
-<div class="row">
-    <div class="col"><hr>
-    Copyright © <a href="https://popo-design.net" target="_blank">popodesign. </a>
-    
-    </div>    
-        </div>
+
+
+
+<div class="col-md-3" id="oarai-weather">
+    <div class="card shadow text-center">
+        <h5><div class="card-header">京都競馬場</div><h5>
+        <div id="weather2"></div>
     </div>
-        </div>
-<p id="pagetop"><a href="#">TOP</a></p>    
-</body>
-</html>
+</div>
+
+
+<div class="col-md-3" id="oarai-weather">
+    <div class="card shadow text-center">
+        <h5><div class="card-header">阪神競馬場</div><h5>
+        <div id="weather3"></div>
+    </div>
+</div>
+
+
+<div class="col-md-3" id="oarai-weather">
+    <div class="card shadow text-center">
+        <h5><div class="card-header">中山競馬場</div><h5>
+        <div id="weather4"></div>
+    </div>
+</div>
+
+
+</div>
+
+</div>
+
+</div>    
+
+<%= render 'shared/footer'%>
