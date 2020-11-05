@@ -13,6 +13,11 @@ require("slide.js")
 require("chartkick")
 require("chart.js")
 require("subform.js")
+require('weather_fuchu.js')
+require('weather_yodo.js')
+require('weather_takarazuka')
+require('weather_funabashi')
+
 
 
 //= require rails-ujs

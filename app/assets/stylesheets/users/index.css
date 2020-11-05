@@ -153,7 +153,7 @@ nav li {
 .mainimg{
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
+margin: 10px auto 20px;
 }
 
 .mainimg
@@ -220,21 +220,34 @@ footer h5 {
 }
 /* /*パンくずリスト
 -----------------------------------*/
-/* .breadcrumb {
-    margin: 0 0 1em 0;
-    padding: 0;	
-}
-.breadcrumb li {
-    list-style-type: none;
-}
-.breadcrumb li a {
-    display: inline-block;
-    color: #959fa5;
-} */ 
+
 
 .manage{
   border: solid 1px black;
   margin-right: 20px;
   background-color: red;
   padding: 5px;
+}
+
+
+
+
+/* 天気表示部分------------- */
+
+.weather-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:40vw;
+    margin: 50px auto 30px;
+}
+
+#weather1,#weather2,#weather3,#weather4{
+    display: flex;
+}
+
+.card-header{
+    border-bottom: solid 1px black;
+    width: auto;
+    font-size: 20px;
 }
