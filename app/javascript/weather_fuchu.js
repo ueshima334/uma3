@@ -1,5 +1,6 @@
 $(function() {
-  var API_KEY = "73d43f1ff709c9a98e5070ac050bb160";
+  var API_KEY = "#{ENV['WEATHER_MAP_API']}";
+  console.log(API_KEY)
   var city = 'fuchu';
   var url = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city + ',jp&units=metric&APPID=' + API_KEY;
   $.ajax({
