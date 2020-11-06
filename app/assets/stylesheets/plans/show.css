@@ -30,3 +30,22 @@
   padding: 10px 0;
   font-size: 20px;
 }
+
+.menu-box{
+  display: flex;
+}
+
+.plan-delete{
+  border: solid 1px red;
+  color: red;
+  margin-left: 30px;
+  padding: 0 10px;
+
+}
+
+.plan-return-btn{
+  margin-left: 20px;
+  border: solid 1px black;
+  padding: 0 10px;
+
+}

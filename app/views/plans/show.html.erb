@@ -1,5 +1,8 @@
 <%= render "shared/header" %>
-<%= link_to '戻る',plans_path,class:'return-btn'%>
+<div class="menu-box">
+<%= link_to '戻る',plans_path,class:'plan-return-btn'%>
+<%= link_to 'レース削除',plan_path(@plan),method: :delete,class:"plan-delete"%>
+</div>
 
 <div class="plan-show-all">
 

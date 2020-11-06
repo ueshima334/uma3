@@ -28,6 +28,12 @@ def create
 
 end
 
+def destroy
+  @plan = Plan.find(params[:id])
+  @plan.destroy
+  redirect_to :action =>  'index' and return
+end
+
 def show
   @plan = Plan.find(params[:id])
 end

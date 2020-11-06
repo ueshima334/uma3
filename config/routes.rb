@@ -5,7 +5,7 @@ resources :users,only:[:show]
 resources :horses,only:[:index,:new,:create,:show]
 resources :rooms,only:[:index]
 resources :races,only:[:new,:create]
-resources :plans,only:[:index,:new,:create,:show]
+resources :plans,only:[:index,:new,:create,:show,:destroy]
 resources :posts do
   resources :comments,only: :create
   get '/likes',to: 'likes#create'
