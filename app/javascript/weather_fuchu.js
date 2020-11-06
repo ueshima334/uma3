@@ -2,7 +2,7 @@ $(function() {
   var API_KEY = gon.weather_api_key;
   console.log(API_KEY)
   var city = 'fuchu';
-  var url = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city + ',jp&units=metric&APPID=' + API_KEY;
+  var url = '//api.openweathermap.org/data/2.5/forecast?q=' + city + ',jp&units=metric&APPID=' + API_KEY;
   $.ajax({
     url: url,
     dataType: "json",
