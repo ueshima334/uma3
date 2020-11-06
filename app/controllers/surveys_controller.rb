@@ -1,4 +1,7 @@
 class SurveysController < ApplicationController
+
+  before_action :authenticate_user!, only: [:show, :new]
+
   def index
     @surveys = Survey.all.order('created_at DESC')
   end

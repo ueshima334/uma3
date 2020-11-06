@@ -1,4 +1,9 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit]
+  before_action :set,only:[:show,:edit,:update,:destroy]
+  before_action :move_to_index, only: [:edit]
+
+
   def index
     @posts = Post.includes(:user, :comments).order('created_at DESC')
   end
@@ -17,23 +22,19 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
     @comment = Comment.new
     @comments = @post.comments.includes(:user).order('created_at DESC')
   end
 
   def destroy
-    post = Post.find(params[:id])
-    post.destroy
+    @post.destroy
     redirect_to root_path
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    post = Post.find(params[:id])
     if post.update(post_params)
       redirect_to post_path(post)
     else
@@ -50,5 +51,16 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:text, images: []).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+   if user_signed_in? && current_user.id!= @post.user.id
+    redirect_to root_path
+   end
+  end
+
+
+  def set
+    @post = Post.find(params[:id])
   end
 end

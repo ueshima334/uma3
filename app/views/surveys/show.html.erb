@@ -2,11 +2,11 @@
 
 <div class="survey-btn-box">
 <%= link_to '戻る',surveys_path,class:'survey-return-btn'%>
-<% if current_user.id == @survey.user_id %>
+<% if user_signed_in? && current_user.id == @survey.user_id %>
 <%= link_to 'アンケートを削除', survey_path(@survey), method: :delete,data: { confirm: '削除しますか？' }, class:'survey-destroy-btn' %>
 <% end %>
 </div>
-<% unless Vote.exists?(user_id:current_user.id,survey_id:params[:id])%>
+<% unless  Vote.exists?(user_id:current_user.id,survey_id:params[:id])%>
 <div class="survey--select-main">
 
   <div class="survey-select">

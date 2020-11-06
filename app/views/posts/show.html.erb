@@ -11,7 +11,7 @@
  </div>
 
  <div class="edit-box">
-    <% if @post.user.id == current_user.id %>
+    <% if user_signed_in? && @post.user.id == current_user.id %>
     <%= link_to '編集', edit_post_path(@post), method: :get, class: "edit-btn" %>
     <%= link_to '削除', post_path(@post), method: :delete,data: { confirm: '削除しますか？' }, class:'destroy-btn' %>
     <% end  %>
@@ -34,7 +34,7 @@
       </div>
       <% end %>
   </div>
-
+<% if user_signed_in?%>
   <div class="comment-box">
     <%= form_with model:[@post,@comment],local: true do |f| %>
       <%= f.text_area :text,class:"comment-text"%>
@@ -43,3 +43,4 @@
       </div>
     <% end %>
   </div>
+  <% end %>
