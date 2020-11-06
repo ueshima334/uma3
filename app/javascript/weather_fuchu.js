@@ -1,5 +1,5 @@
 $(function() {
-  var API_KEY = "#{ENV['WEATHER_MAP_API']}";
+  var API_KEY = gon.weather_api_key;
   console.log(API_KEY)
   var city = 'fuchu';
   var url = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city + ',jp&units=metric&APPID=' + API_KEY;

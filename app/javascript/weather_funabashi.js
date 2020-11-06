@@ -1,5 +1,5 @@
 $(function() {
-  var API_KEY = "73d43f1ff709c9a98e5070ac050bb160";
+  var API_KEY = gon.weather_api_key;
   var city = 'funabashi';
   var url = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city + ',jp&units=metric&APPID=' + API_KEY;
   $.ajax({
