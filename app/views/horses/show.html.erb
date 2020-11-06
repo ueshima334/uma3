@@ -1,7 +1,25 @@
+<div class="horse-show-header">
+<div class="header-icon-box">
 <%= render "shared/header" %>
+</div>
+<div class="horse-show-comment">
+<button id="rap-btn" class="horse-show-btn">ラップ分析の見方</button>
+
+</div>
+</div>
+
 <%= link_to '戻る',plans_path,class:'return-btn'%>
 
 <div class="horse-show-all">
+
+<div id="horse-show-commentbox">
+・馬場状態(芝コースの場合)は良〜不良まで4段階あり、<b>良に近づくほどスピードが必要になり、不良に近づくほどパワーが必要</b>になります。<br>
+馬場状態によって得意不得意があるので着目しましょう。<br>
+・ラップタイムは200ｍ毎に表示しています。一般的に<b>200ｍが12秒以下だと早い、13秒以上だと遅い</b>と言われています。<br>
+道中のラップタイムは遅いが、終盤急に早くなるレースの場合、<b>瞬発力が必要なレース</b>だと言えます。<br>
+反対に、道中のラップが緩む事なく早いタイムを刻み続けるレースの場合、<b>スタミナが必要なレース</b>だと言えます。<br>
+こういったレースラップも馬によって得意不得意があるので着目しましょう。
+</div>
 
   <div class="horse-show-title">
     <%= "#{@horse.name}のラップ分析" %>

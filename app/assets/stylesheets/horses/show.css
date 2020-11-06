@@ -64,3 +64,22 @@ padding: 0 30px;}
 .horse-show-pace{
   text-align: center;
 }
+
+.horse-show-header{
+  display: flex;
+ align-items: center;
+}
+
+.horse-show-comment{
+  margin-left: 350px;
+  font-size: 30px;
+  width: 300px;
+}
+
+#horse-show-commentbox{
+  display: none;
+  margin: 10px auto;
+  width: 40vw;
+  padding: 20px 20px;
+  border: solid 1px black;
+}
