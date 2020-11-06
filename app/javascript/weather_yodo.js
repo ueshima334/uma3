@@ -1,7 +1,7 @@
 $(function() {
   var API_KEY = gon.weather_api_key;
   var city = 'kyoto';
-  var url = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city + ',jp&units=metric&APPID=' + API_KEY;
+  var url = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + ',jp&units=metric&APPID=' + API_KEY;
   $.ajax({
     url: url,
     dataType: "json",
