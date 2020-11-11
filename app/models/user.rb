@@ -9,4 +9,7 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :surveys, dependent: :destroy
   has_many :votes, dependent: :destroy
+
+  validates :nickname,presence: true
+
 end
